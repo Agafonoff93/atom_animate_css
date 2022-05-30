@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.scss">
+	<title>Atom_animation_css</title>
+
+
+	<style>
+		@keyframes circumferential-movement {
+			from {
+				transform: rotateZ(0) translateX(20vmin) rotateZ(0) rotateY(-70deg);
+			}
+
+			to {
+				transform: rotateZ(360deg) translateX(20vmin) rotateZ(-360deg) rotateY(-70deg);
+			}
+		}
+
+		.core {
+			width: 5vmin;
+			height: 5vmin;
+			border-radius: 50%;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+			position: absolute;
+			background: firebrick;
+			background: radial-gradient(circle at 10px 10px, red, black);
+		}
+
+		.orbit {
+			width: 40vmin;
+			height: 40vmin;
+			border-radius: 50%;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+			position: absolute;
+			border: 3px darkgrey solid;
+			transform-style: preserve-3d;
+		}
+
+		.orbit .electron {
+			width: 4vmin;
+			height: 4vmin;
+			border-radius: 50%;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+			position: absolute;
+			background: royalblue;
+			background: radial-gradient(circle at 10px 10px, royalblue, midnightblue);
+			animation: circumferential-movement linear infinite;
+		}
+
+		.orbit:nth-child(1) {
+			transform: rotateZ(60deg) rotateY(70deg);
+		}
+
+		.orbit:nth-child(1) .electron {
+			animation-duration: 1.2s;
+		}
+
+		.orbit:nth-child(2) {
+			transform: rotateZ(120deg) rotateY(70deg);
+		}
+
+		.orbit:nth-child(2) .electron {
+			animation-duration: 2.4s;
+		}
+
+		.orbit:nth-child(3) {
+			transform: rotateZ(180deg) rotateY(70deg);
+		}
+
+		.orbit:nth-child(3) .electron {
+			animation-duration: 3.6s;
+		}
+	</style>
+
+	<script>
+		window.console = window.console || function (t) { };
+	</script>
+
+
+
+	<script>
+		if (document.location.search.match(/type=embed/gi)) {
+			window.parent.postMessage("resize", "*");
+		}
+	</script>
+
+
+</head>
+
+
+
+
+<body translate="no">
+	<div class="atom">
+		<div class="orbit"><span class="electron"></span></div>
+		<div class="orbit"><span class="electron"></span></div>
+		<div class="orbit"><span class="electron"></span></div>
+		<div class="core"></div>
+	</div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
